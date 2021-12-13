@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <title>{% block title %}{% endblock %}</title>
+      <style>
+        .breadcrumb-item+.breadcrumb-item::before { content: ">"; }
+        .breadcrumb{ width: 100%; font-size: 13px; position: absolute; top: 12px;}
+      </style>
+  </head>
+  <body>
+      <div class="mainbox">
+        <div class="header"> 
+          <img src="{{ url_for('static', filename='img/heartboo.png') }}" id="heartboo1">
+          <h1>외대생 여행메이트 찾기</h1>
+          <img src="{{ url_for('static', filename='img/heartboo.png') }}" id="heartboo2">
+        </div>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb" style="width: 100%; font-size: 13px; position: absolute; top: 12px;">
+            <li class="breadcrumb-item" ><a href="/">홈</a></li>
+            <li class="breadcrumb-item"><a href="/condition">매칭 조건선택</a></li>
+            <li class="breadcrumb-item"><a href="/teamlist">매칭된 팀목록</a></li>
+            <li class="breadcrumb-item"><a href="/teaminfo">팀정보</a></li>
+            <li class="breadcrumb-item"><a href="#">매칭완료</a></li>
+          </ol>
+        </nav>
+
+        <button type="button" onclick="location.href='/logout'" id="logout">로그아웃</button>
+
+        {% block content %}{% endblock %} 
+        
+      </div>
+
+    <script></script>
+
+  </body>
+</html>
